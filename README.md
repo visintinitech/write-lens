@@ -2,7 +2,8 @@
 
 **Del caos, claridad.**
 
-Decant transforma ideas desordenadas en esquemas estructurados. Pega texto caótico (notas sueltas, lluvia de ideas, transcripciones de voz) y obtén versiones ejecutivas, artículos, ensayos, hilos de Twitter o guías prácticas.
+Decant es una herramienta que convierte texto caótico (notas sueltas, lluvia de ideas, transcripciones de voz, minutas desordenadas) en estructuras claras y utilizables. Detecta automáticamente tesis, argumentos, evidencias, objeciones, emociones y acciones. Genera tres salidas por ejecución: versión ejecutiva, versión completa en el formato más adecuado, y un TL;DR de tres puntos. Corre completamente local, sin dependencias externas, en un solo archivo Python.
+
 
 ---
 
