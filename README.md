@@ -1,141 +1,39 @@
-📝 WriteLens — Real-Time Writing Analysis Engine
-Overview
+# DECANT
 
-WriteLens is a rule-based writing analysis engine that evaluates text in real time.
+**Del caos, claridad.**
 
-It detects structural and stylistic issues such as repetition, long sentences, and basic grammar errors, while providing readability metrics and tone classification — all without external NLP libraries.
+Decant transforma ideas desordenadas en esquemas estructurados. Pega texto caótico (notas sueltas, lluvia de ideas, transcripciones de voz) y obtén versiones ejecutivas, artículos, ensayos, hilos de Twitter o guías prácticas.
 
-Core Features
-Repetition Detection
+---
 
-Identifies excessive word repetition within a configurable window.
+## 🧪 Filosofía
 
-Long Sentence Detection
+> *Decantar* = separar un líquido de sus sedimentos vertiéndolo suavemente.
 
-Flags sentences that exceed a defined length threshold.
+Aplicado a ideas: separar el orden del caos, lo valioso de lo ruidoso, lo estructurado de lo disperso.
 
-Default: 20 words per sentence
-Grammar Checks
-Missing capitalization after punctuation
-Duplicate punctuation (??, !!, ..)
-Multiple spaces
-Unclosed quotes
-Tone Classification
+Decant no es un asistente de escritura. Es un **filtro cognitivo**.
 
-Heuristic-based classification:
+---
 
-Formal
-Neutral
-Informal
+## ✨ Características
 
-Note: This is rule-based, not machine learning.
+| Característica | Descripción |
+|----------------|-------------|
+| **Zero dependencias** | Solo Python estándar. Nada que instalar. |
+| **Sin API** | Todo corre local. Tus ideas no salen de tu máquina. |
+| **Detección automática** | Elige el mejor formato según el contenido. |
+| **6 tipos de ideas** | Tesis, argumentos, evidencias, objeciones, emociones, acciones. |
+| **3 salidas por ejecución** | Versión ejecutiva, versión completa, TL;DR. |
+| **Exportación** | Guarda automáticamente en Markdown. |
 
-Text Statistics
-Word count
-Sentence count
-Average sentence length
-Lexical diversity
-Readability score (0–100)
-Tech Stack
-Layer	Technology
-Backend	Node.js + Express
-Core Engine	Vanilla JavaScript
-Testing	Native test runner
-Deployment	Docker (optional)
-Project Structure
-writelens/
-├── src/
-│   ├── engine/        # Core analysis logic
-│   ├── api/           # Express routes
-│   └── utils/         # Helpers
-├── tests/             # Unit tests
-├── server.js
-├── package.json
-├── Dockerfile
-└── README.md
-Getting Started
-1. Install dependencies
-npm install
-2. Run server
-npm start
+---
 
-Server runs at:
+## 📦 Instalación
 
-http://localhost:3000
-3. Test the API
-curl -X POST http://localhost:3000/api/analyze \
-  -H "Content-Type: application/json" \
-  -d '{"text":"Your text here"}'
-4. Run tests
-npm test
-API
-POST /api/analyze
-Request
-{
-  "text": "Your text here"
-}
-Response
-{
-  "repetitions": [
-    { "word": "example", "count": 3, "density": 0.12 }
-  ],
-  "longSentences": [
-    { "sentence": "...", "wordCount": 24 }
-  ],
-  "grammarIssues": [],
-  "tone": "formal",
-  "readability": 70,
-  "statistics": {
-    "wordCount": 50,
-    "sentenceCount": 3,
-    "avgSentenceLength": 16
-  }
-}
-Performance Targets
-Text Size	Expected Time
-~5KB	2–5 ms
-~50KB	20–40 ms
-~500KB	200–400 ms
-Limitations
-No deep semantic understanding
-Tone detection is heuristic-based
-Grammar checks are limited to simple patterns
-Roadmap
- Incremental analysis (process only changes)
- Web Worker integration (non-blocking UI)
- Advanced readability scoring
- Plugin system for custom rules
- Frontend editor integration
-Learning Outcomes
+```bash
+# Un solo archivo. Nada más.
+curl -O https://raw.githubusercontent.com/decant/decant/main/decant.py
 
-This project demonstrates:
-
-String processing and tokenization
-Regex-based pattern detection
-Algorithm design for text analysis
-REST API development
-Testing and validation
-Performance considerations
-Development Philosophy
-
-Build only what you can explain.
-
-Avoid unnecessary complexity
-Prefer clarity over abstraction
-Measure performance instead of assuming it
-Document what actually works, not what sounds impressive
-Critical Note
-
-If you claim:
-
-“real-time analysis” → you must handle debouncing
-“fast performance” → you must measure it
-“tone detection” → you must justify your rules
-
-Otherwise, this becomes marketing, not engineering.
-
-Next Steps
-Implement tokenization and frequency analysis
-Add sentence segmentation logic
-Introduce rule-based validation system
-Measure execution time and optimize
+# Ejecutar
+python decant.py
